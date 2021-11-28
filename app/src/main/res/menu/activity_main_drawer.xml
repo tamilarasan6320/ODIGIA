@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+
+    >
+    <group>
+    <item
+        android:id="@+id/myprofile"
+        android:title="My Profile"
+        android:icon="@drawable/user"
+
+        />
+    <item
+        android:id="@+id/invitefrd"
+        android:title="Invite Frient"
+        android:icon="@drawable/present_box"
+
+
+        />
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/settings"/>
+    <item
+        android:id="@+id/list"
+        android:title="List"
+        android:icon="@drawable/list"
+        />
+
+   </group>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/earning"
+                android:title="Earning"
+                android:icon="@drawable/bank"
+                />
+        </menu>
+    </item>
+</menu>
