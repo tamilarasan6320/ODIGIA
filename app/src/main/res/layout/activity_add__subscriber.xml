@@ -6,40 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Add_SubscriberChannel">
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        >
 
-        <!--Recycler view for displaying list of contacts-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/idRVContacts"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content">
 
-        <!--progress bar for displaying loading-->
-        <ProgressBar
-            android:id="@+id/idPBLoading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Add Subscriber"
+                app:menu="@menu/top_appbar"
+                android:background="@color/PrimaryDark"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
 
-        <!--fab for adding a new contact-->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/idFABadd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
-            app:srcCompat="@drawable/ic_baseline_account_circle_24"
-            app:fabCustomSize="40dp"
-            app:tint="@color/white"
-            android:layout_alignParentRight="true" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-    </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view"
+            tools:listitem="@layout/item_contact"
+            />
+
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>
