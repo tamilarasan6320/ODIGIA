@@ -39,7 +39,7 @@ public class settingFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(),LoginActivity.class);
+                Intent intent = new Intent(getActivity(), IntroActivity.class);
                 startActivity(intent);
 
             }

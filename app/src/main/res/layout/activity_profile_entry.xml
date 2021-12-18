@@ -27,27 +27,23 @@
             />
 
     </com.google.android.material.appbar.AppBarLayout>
-       <RelativeLayout
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_gravity="center"
-           >
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:id="@+id/image"
             android:scaleType="center"
+            android:layout_gravity="center"
             android:background="@drawable/round_add_profile"
             android:layout_marginTop="50dp"
             app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24"
             />
 
-       </RelativeLayout>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="First name"
+            android:id="@+id/firstname"
             android:textColor="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -59,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="last name"
+            android:id="@+id/lastname"
             android:textColor="@color/black"
             android:background="@drawable/edittext2"
             android:paddingBottom="40dp"
@@ -70,6 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="User Id"
+            android:id="@+id/userid"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"

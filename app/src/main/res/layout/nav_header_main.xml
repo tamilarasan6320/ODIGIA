@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="130dp"
-android:background="@color/PrimaryDark"
-android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/PrimaryDark"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@ android:theme="@style/ThemeOverlay.AppCompat.Dark">
         >
 
     <ImageView
+        android:id="@+id/profile_icon"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/round_btn1"
@@ -33,7 +35,8 @@ android:theme="@style/ThemeOverlay.AppCompat.Dark">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tamil"
+            tools:text="Tamil"
+            android:id="@+id/nametxt"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@color/white"

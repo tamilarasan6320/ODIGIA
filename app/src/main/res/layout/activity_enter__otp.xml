@@ -7,10 +7,16 @@
     tools:context=".Enter_OtpActivity"
     android:orientation="vertical"
     >
+
+
     <include
         layout="@layout/otp_appbar"
         />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +28,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_baseline_comment_24"
+            app:srcCompat="@drawable/ic_baseline_comment_24"
 
             />
 
@@ -30,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Enter Phone Number"
+            android:text="Enter OTP"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold" />
@@ -43,27 +49,47 @@
             <TextView
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
                 android:gravity="center_horizontal"
-                android:text="We've sent the code to your phone number +919965313369"
+                android:text="We've sent the code to your phone number"
+                android:textAlignment="center"
+                android:id="@+id/textview"/>
+            <TextView
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="9965313369"
+                android:id="@+id/phonetv"
+                android:layout_below="@+id/textview"
                 android:textAlignment="center" />
         </RelativeLayout>
 
 
 
 
-        <EditText
-            android:id="@+id/textField"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/editext"
-            android:hint="Enter number"
-            android:inputType="phone"
-            android:paddingLeft="10dp" />
+
 
     </LinearLayout>
+        <com.chaos.view.PinView
+            android:id="@+id/pin_view"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:itemCount="6"
+            android:layout_gravity="center"
+            android:itemBackground="#F4F6F9"
+            android:cursorVisible="true"
+            app:lineColor="#2196F3"
+            android:textColor="#1F1F1F"
+            android:inputType="number"
+            app:hideLineWhenFilled="true"
+            style="@style/PinWidget.PinView"
+            app:itemRadius="5dp"
+
+            />
+
+    </LinearLayout>
+
 
 
     <ImageButton
@@ -75,7 +101,7 @@
         android:layout_marginBottom="50dp"
         android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_24"
         />
 
 </RelativeLayout>

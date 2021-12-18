@@ -4,135 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textview_1"
-        android:textStyle="bold"
-        android:textColor="@color/Primary"
-        android:text="ODIGIA"
-        android:gravity="center_horizontal"
-        android:textSize="28dp"
-        android:layout_above="@+id/text_2"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    >
+    <include
+        layout="@layout/login_appbar"
         />
 
-    <TextView
-        android:id="@+id/text_2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="What you can do with Odigia"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp"
+        >
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_baseline_phonelink_ring_24"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Phone Number"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:gravity="center"
-        android:textColor="@color/Primarylight"
-        android:layout_above="@+id/linear1"
-        android:layout_margin="20dp"
-        android:textStyle="bold"
         />
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Please Confirm country code and enter your phone number"
+        android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:id="@+id/linear1"
-
         >
-
         <LinearLayout
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_margin="20dp"
             >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@drawable/shuttle"
-                android:layout_gravity="center"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+91"
+            android:textSize="20dp"
+            />
 
-                />
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Launch free paid groups"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textColor="@color/Primary"
-                />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@drawable/chatting"
-                android:layout_gravity="center"
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Paid direct messages"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textColor="@color/Primary"
-
-                />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@drawable/credit_cards"
-                android:layout_gravity="center"
-
-                />
-            <TextView
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Easy payment collection"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:textColor="@color/Primary"
-
-                />
+                android:text="_________"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
-
+        <EditText
+            android:id="@+id/reg_phoneNo"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter number"
+            android:paddingLeft="10dp"
+            android:inputType="number"
+            android:background="@drawable/editext"
+            />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linear1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/PrimaryDark"
-        android:text="Login"
+    </LinearLayout>
 
-
+    <ImageButton
+        android:id="@+id/next_btn1"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:background="@drawable/round_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_24"
         />
 
-
 </RelativeLayout>
+
+
+

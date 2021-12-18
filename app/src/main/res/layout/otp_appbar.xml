@@ -16,7 +16,6 @@
             android:layout_height="?attr/actionBarSize"
             app:title="Enter OTP"
             android:background="@color/PrimaryDark"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             />
 

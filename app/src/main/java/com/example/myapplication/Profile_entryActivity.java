@@ -1,11 +1,7 @@
 package com.example.myapplication;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -13,41 +9,75 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import com.canhub.cropper.CropImage;
+import com.canhub.cropper.CropImageView;
+import com.example.myapplication.helper.ApiConfig;
+import com.example.myapplication.helper.Constant;
+import com.example.myapplication.helper.Session;
 import com.squareup.picasso.Picasso;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 public class Profile_entryActivity extends AppCompatActivity {
 
     private View next;
     public ImageView pick;
-
-
+    EditText first_name , last_name,user_id;
     public final int reqWritePermission = 2;
     public static final int SELECT_FILE = 110;
     Uri imageUri,profileUri;
+    String mobilenumber;
+    String filePath = null;
+    Activity activity;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_entry);
+        activity = Profile_entryActivity.this;
+
+        first_name = findViewById(R.id.firstname);
+        last_name = findViewById(R.id.lastname);
+        user_id = findViewById(R.id.userid);
 
         //next acivity
         next = findViewById(R.id.favorite);
+
+        mobilenumber = getIntent().getStringExtra(Constant.MOBILE);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent = new Intent(Profile_entryActivity.this,HomeActivity.class);
-               startActivity(intent);
+                Registeruser();
 
             }
         });
 
 
         pick=(ImageView)findViewById(R.id.image);
+        Picasso.get()
+                .load(R.drawable.ic_profile_placeholder)
+                .fit()
+                .centerInside()
+                .placeholder(R.drawable.ic_profile_placeholder)
+                .error(R.drawable.ic_profile_placeholder)
+                .transform(new RoundedCornersTransformation(20, 0))
+                .into(pick);
         pick.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -62,6 +92,62 @@ public class Profile_entryActivity extends AppCompatActivity {
 
 
 
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+    private void Registeruser() {
+        Map<String, String> params = new HashMap<>();
+        Map<String, String> fileParams = new HashMap<>();
+        params.put(Constant.USER_NAME, user_id.getText().toString().trim());
+        params.put(Constant.FIRSTNAME, first_name.getText().toString().trim());
+        params.put(Constant.LASTNAME, last_name.getText().toString().trim());
+        params.put(Constant.MOBILE, mobilenumber);
+        fileParams.put(Constant.PROFILE, filePath);
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
+                        new Session(activity).createUserLoginSession(jsonObject.getString(Constant.PROFILE),
+                                jsonObject.getString(Constant.USER_ID),
+                                jsonObject.getString(Constant.FIRSTNAME),
+                                jsonObject.getString(Constant.LASTNAME),
+                                jsonObject.getString(Constant.MOBILE));
+
+                        Intent intent = new Intent(Profile_entryActivity.this,HomeActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                        Toast.makeText(this, ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+
+                    }
+                    else {
+                        Toast.makeText(this, ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e){
+                    e.printStackTrace();
+                }
+
+
+
+            }
+            else {
+                Toast.makeText(this, String.valueOf(response) +String.valueOf(result), Toast.LENGTH_SHORT).show();
+
+            }
+        }, Profile_entryActivity.this, Constant.REGISTER_URL, params,fileParams);
 
 
 
@@ -109,13 +195,21 @@ public class Profile_entryActivity extends AppCompatActivity {
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
 
                 CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                filePath = result.getUriFilePath(Profile_entryActivity.this, true);
                 if (resultCode == RESULT_OK) {
-                    profileUri = result.getUri();
+
+                    assert result != null;
+
+                    profileUri = result.getUriContent();
                     Picasso.get()
                             .load(profileUri)
                             .fit()
                             .centerInside()
+                            .placeholder(R.drawable.ic_profile_placeholder)
+                            .error(R.drawable.ic_profile_placeholder)
+                            .transform(new RoundedCornersTransformation(20, 0))
                             .into(pick);
+
 
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                     Exception error = result.getError();

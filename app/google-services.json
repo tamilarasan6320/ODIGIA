@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "102398742785",
+    "project_id": "odigia-4772e",
+    "storage_bucket": "odigia-4772e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102398742785:android:a639b3e577ee0f523d0b00",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102398742785-41sjclh4e2g5vqg63hujbr27g5esep93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "f9a74944e0d8951610e4426b3fbc105d4b2151bb"
+          }
+        },
+        {
+          "client_id": "102398742785-p57jld0k1jgutr6bjdpk01h811214pd6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx1G6UnsQ4X_-QAhJ0QENHvDw-J3O5Bt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102398742785-p57jld0k1jgutr6bjdpk01h811214pd6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,29 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <!--permissions to read contacts-->
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!--permissions to write contacts-->
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <!--permissions to make a call-->
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <!--permissions to send sms-->
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <!--permissions to write sms-->
-    <uses-permission android:name="android.permission.WRITE_SMS"/>
-
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- permissions to read contacts -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- permissions to write contacts -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" /> <!-- permissions to make a call -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- permissions to send sms -->
+    <uses-permission android:name="android.permission.SEND_SMS" /> <!-- permissions to write sms -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
 
     <application
+        android:name="com.example.myapplication.helper.ApiConfig"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".IntroActivity"/>
+        <activity android:name=".ChatActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".Add_SubscriberGroup" />
         <activity android:name=".Add_SubscriberChannel" />
@@ -34,19 +35,21 @@
         <activity android:name=".New_channelActivity" />
         <activity android:name=".Floating_ActionActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Profile_entryActivity">
+        <activity android:name=".Profile_entryActivity" />
+
+        <activity
+            android:name="com.canhub.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".Enter_OtpActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".Enter_OtpActivity" />
-        <activity android:name=".Get_numberActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
     </application>
 
