@@ -61,7 +61,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         TextView Nametxt = header.findViewById(R.id.nametxt);
         ImageView Profile = header.findViewById(R.id.profile_icon);
-        Nametxt.setText(session.getData(Constant.NAME));
+        Nametxt.setText(session.getData(Constant.FIRSTNAME));
         Picasso.get()
                 .load(session.getData(Constant.PROFILE))
                 .fit()

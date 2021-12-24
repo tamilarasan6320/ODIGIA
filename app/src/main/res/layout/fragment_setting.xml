@@ -41,6 +41,7 @@
             android:layout_height="60dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
+            android:id="@+id/profile_move"
 
             >
             <LinearLayout
@@ -266,7 +267,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Get in touch with team Rigi"
+                android:text="Get in touch with team ODIGIA"
                 android:layout_marginTop="5dp"
                 android:textSize="14sp"/>
 

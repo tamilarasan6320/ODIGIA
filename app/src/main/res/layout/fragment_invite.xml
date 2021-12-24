@@ -7,7 +7,6 @@
     tools:context=".InviteFragment"
     android:background="@color/PrimaryDark"
     >
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,10 +20,7 @@
             app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             />
-
     </com.google.android.material.appbar.AppBarLayout>
-
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
@@ -64,6 +60,7 @@
                   android:textStyle="bold"
                   android:textSize="18dp"
                   android:textColor="@color/black"
+                  android:id="@+id/invite_id"
                   />
 
           </com.google.android.material.card.MaterialCardView>
@@ -78,6 +75,7 @@
                     android:layout_width="150dp"
                     android:layout_height="40dp"
                     android:backgroundTint="@color/PrimaryDark"
+                    android:id="@+id/share_id"
                     >
 
                     <ImageView
@@ -109,6 +107,7 @@
                     app:srcCompat="@drawable/ic_baseline_content_copy_241"
                     android:layout_gravity="center"
                     android:layout_marginLeft="80dp"
+                    android:id="@+id/link_id"
                     />
             </LinearLayout>
 

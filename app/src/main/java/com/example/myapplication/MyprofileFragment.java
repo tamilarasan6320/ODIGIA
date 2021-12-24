@@ -1,28 +1,30 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.helper.Constant;
+import com.example.myapplication.helper.Session;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.squareup.picasso.Picasso;
+
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 
 public class MyprofileFragment extends Fragment {
 
-   private View bckbtn;
+   private View bckbtn,update_profile;
+    Session session;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,6 +38,30 @@ public class MyprofileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        update_profile =rootview.findViewById(R.id.update_profile);
+        session = new Session(getActivity());
+
+        update_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),UpdateProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView name = rootview.findViewById(R.id.name);
+        TextView usedid = rootview.findViewById(R.id.username);
+        ImageView profile = rootview.findViewById(R.id.profile);
+        name.setText(session.getData(Constant.FIRSTNAME));
+        usedid.setText(session.getData(Constant.USER_NAME));
+        Picasso.get()
+                .load(session.getData(Constant.PROFILE))
+                .fit()
+                .centerInside()
+                .placeholder(R.drawable.ic_profile_placeholder)
+                .error(R.drawable.ic_profile_placeholder)
+                .transform(new RoundedCornersTransformation(20, 0))
+                .into(profile);
 
 
 

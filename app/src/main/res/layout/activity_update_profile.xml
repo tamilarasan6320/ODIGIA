@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Update Profile"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            android:background="@color/PrimaryDark"
+            app:menu="@menu/top_appbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/update_image"
+            android:scaleType="center"
+            android:layout_gravity="center"
+            android:background="@drawable/round_add_profile"
+            android:layout_marginTop="25dp"
+            app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First name"
+            android:id="@+id/firstname"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last name"
+            android:id="@+id/lastname"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="username"
+            android:id="@+id/userid"
+            android:textColor="@color/gray"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Add a few lines about you which will come up on your profile page"
+            android:id="@+id/description"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="60dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your city"
+            android:id="@+id/city"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Instagram User Id"
+            android:id="@+id/insta_id"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Twitter User Id"
+            android:id="@+id/twitter_id"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Facebook User Id"
+            android:id="@+id/fb_id"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Linkedin User Id"
+            android:id="@+id/Linkedin_id"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Youtube User Id"
+            android:id="@+id/youtube_id"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edittext2"
+            android:paddingBottom="40dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            />
+
+
+
+
+    </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

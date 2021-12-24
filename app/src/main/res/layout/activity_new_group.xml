@@ -40,6 +40,7 @@
                 android:background="@drawable/photo_camera"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="20dp"
+                android:id="@+id/image_set_group"
                 />
             <EditText
                 android:layout_width="match_parent"
@@ -80,40 +81,40 @@
                     />
             </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="20dp"
-                >
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                >-->
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/wallet"
-                    android:layout_marginRight="10dp"
-                    />
+<!--                <ImageView-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_height="20dp"-->
+<!--                    android:src="@drawable/wallet"-->
+<!--                    android:layout_marginRight="10dp"-->
+<!--                    />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Launch paid Channel"
-                    />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Launch paid Channel"-->
+<!--                    />-->
 
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
-                    />
-            </LinearLayout>
+<!--                <Switch-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="150dp"-->
+<!--                    />-->
+<!--            </LinearLayout>-->
 
-            <TextView
-                android:layout_margin="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Launch paid channel where user will be able to join only after paying the subscription pricel"
-                />
+<!--            <TextView-->
+<!--                android:layout_margin="20dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Launch paid channel where user will be able to join only after paying the subscription pricel"-->
+<!--                />-->
         </LinearLayout>
 
 

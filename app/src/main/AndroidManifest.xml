@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" /> <!-- permissions to read contacts -->
@@ -16,15 +15,16 @@
     <uses-permission android:name="android.permission.WRITE_SMS" />
 
     <application
-        android:name="com.example.myapplication.helper.ApiConfig"
+        android:name=".helper.ApiConfig"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MyApplication">
-        <activity android:name=".IntroActivity"/>
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".UpdateProfileActivity"></activity>
+        <activity android:name=".IntroActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".Add_SubscriberGroup" />
@@ -36,7 +36,6 @@
         <activity android:name=".Floating_ActionActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".Profile_entryActivity" />
-
         <activity
             android:name="com.canhub.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
@@ -48,7 +47,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".MainActivity" />
     </application>

@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,7 +15,6 @@ public class LoginActivity extends AppCompatActivity {
     ImageButton Next;
     private View Backbtn;
     EditText regPhoneNo;
-    SharedPreferences sharedPreferences;
     Activity activity;
 
 
@@ -30,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         Backbtn = findViewById(R.id.topAppBar);
         regPhoneNo = findViewById(R.id.reg_phoneNo);
 
-        sharedPreferences = getSharedPreferences(Constant.SHARED_PREF,MODE_PRIVATE);
 
         Next.setOnClickListener(new View.OnClickListener() {
 

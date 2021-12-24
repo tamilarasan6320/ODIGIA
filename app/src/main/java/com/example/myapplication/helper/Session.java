@@ -18,13 +18,21 @@ public class Session {
             e.printStackTrace();
         }
     }
-    public void createUserLoginSession(String profile, String id, String firstname,String lastname, String mobile) {
+    public void createUserLoginSession(String profile, String id,String username, String firstname,String lastname, String mobile, String description, String city, String instagram, String twitter, String facebook, String linkedin, String youtube) {
         editor.putBoolean(Constant.IS_USER_LOGIN, true);
         editor.putString(Constant.ID, id);
-        editor.putString(Constant.NAME, firstname);
-        editor.putString(Constant.NAME, lastname);
+        editor.putString(Constant.USER_NAME, username);
+        editor.putString(Constant.FIRSTNAME, firstname);
+        editor.putString(Constant.LASTNAME, lastname);
         editor.putString(Constant.MOBILE, mobile);
         editor.putString(Constant.PROFILE, profile);
+        editor.putString(Constant.DESCRIPTION, description);
+        editor.putString(Constant.CITY, city);
+        editor.putString(Constant.INSTAGRAM, instagram);
+        editor.putString(Constant.TWITTER, twitter);
+        editor.putString(Constant.FACEBOOK, facebook);
+        editor.putString(Constant.LINKEDIN, linkedin);
+        editor.putString(Constant.YOUTUBE, youtube);
         editor.commit();
     }
     public String getData(String id) {
