@@ -10,6 +10,11 @@ public class Constant {
     public static final String REGISTER_URL = BaseUrl + "register_user.php";
     public static final String UPDATE_URL = BaseUrl + "update_user.php";
     public static final String CREATECHANNEL_URL = BaseUrl + "create_channel.php";
+    public static final String CHANNEL_LIST_URL = BaseUrl + "channel_list.php";
+    public static final String USER_LIST_URL = BaseUrl + "user_list.php";
+    public static final String UPDATE_CHANNEL_URL = BaseUrl + "update_channel.php";
+    public static final String ADD_SUBSCRIBER_CHANNEL_URL = BaseUrl + "add_subscriber_channel.php";
+
     public static final String SUCCESS = "success";
     public static final String Phonenumber = "phonenumber";
     public static final String SHARED_PREF = "SHARED_PREF";
@@ -25,6 +30,8 @@ public class Constant {
     public static final String FIRSTNAME = "first_name";
     public static final String LASTNAME = "last_name";
     public static final String USER_ID = "user_id";
+    public static final String CHANNEL_ID = "channel_id";
+    public static final String SUBSCRIBER_ID = "subscriber_id";
     public static final String MESSAGE = "message";
     public static final String DESCRIPTION = "description";
     public static final String CITY = "city";
@@ -41,4 +48,6 @@ public class Constant {
     public static final String PUBLIC = "public";
     public static final String CHANNELIMAGE = "channel_image";
     public static final String INVITELINK = "http://odigia.booksbear.in/club";
+    public static final String DATA = "data";
+
 }

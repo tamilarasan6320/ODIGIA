@@ -71,14 +71,13 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="0dp"
-            android:id="@+id/channel_describtion"
+            android:id="@+id/channel_description"
             />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="provide a description about channel"
                 android:layout_marginLeft="24dp"
-                android:layout_below="@+id/describtion"
 
                 />
             </RelativeLayout>

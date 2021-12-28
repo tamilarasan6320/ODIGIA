@@ -28,13 +28,22 @@
         <activity android:name=".ChatActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".Add_SubscriberGroup" />
-        <activity android:name=".Add_SubscriberChannel" />
+        <activity android:name=".Add_SubscriberChannel" >
+
+        </activity>
         <activity android:name=".Group_SettingsActivity" />
         <activity android:name=".Channel_SettingActivity" />
         <activity android:name=".New_groupActivity" />
         <activity android:name=".New_channelActivity" />
         <activity android:name=".Floating_ActionActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity android:name=".Profile_entryActivity" />
         <activity
             android:name="com.canhub.cropper.CropImageActivity"
@@ -42,11 +51,7 @@
         <activity android:name=".Enter_OtpActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashscreenActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
     </application>

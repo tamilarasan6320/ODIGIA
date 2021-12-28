@@ -28,7 +28,7 @@ public class Add_SubscriberGroup extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ContactModal> arrayList = new ArrayList<ContactModal>();
-    MainAdapter adapter;
+    SubscriberAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +138,7 @@ public class Add_SubscriberGroup extends AppCompatActivity {
         }
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new MainAdapter(this,arrayList);
+        //adapter = new MainAdapter(this,arrayList);
 
         recyclerView.setAdapter(adapter);
 

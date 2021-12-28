@@ -16,11 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.myapplication.helper.Constant;
 import com.example.myapplication.helper.Session;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
@@ -76,6 +78,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setText("CHATS"));
+        tabLayout.addTab(tabLayout.newTab().setText("LOCKED"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        final ViewPager viewPager =(ViewPager)findViewById(R.id.view_pager);
+        TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(tabsAdapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
         
     }
 
@@ -87,38 +112,38 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId())
 
         {
-                case R.id.myprofile:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new MyprofileFragment()
-                    ).commit();
-
-
-                    break;
-
-                case R.id.invitefrd:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new InviteFragment()
-                    ).commit();
-                    break;
-
-                case R.id.settings:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new settingFragment()
-                    ).commit();
-                    break;
-
-                case R.id.list:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new listFragment()
-                    ).commit();
-                    break;
-
-
-                case R.id.earning:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new EarningFragment()
-                    ).commit();
-                    break;
+//                case R.id.myprofile:
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            new MyprofileFragment()
+//                    ).commit();
+//
+//
+//                    break;
+//
+//                case R.id.invitefrd:
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            new InviteFragment()
+//                    ).commit();
+//                    break;
+//
+//                case R.id.settings:
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            new settingFragment()
+//                    ).commit();
+//                    break;
+//
+//                case R.id.list:
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            new listFragment()
+//                    ).commit();
+//                    break;
+//
+//
+//                case R.id.earning:
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                            new EarningFragment()
+//                    ).commit();
+//                    break;
 
 
             }

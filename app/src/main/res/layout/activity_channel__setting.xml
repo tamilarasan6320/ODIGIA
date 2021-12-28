@@ -51,6 +51,7 @@
 
         </LinearLayout>
         <RadioGroup
+            android:id="@+id/radiogroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -62,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Public Channel"
+                android:tag="public"
                 android:paddingLeft="10dp"
                 android:id="@+id/radio_button_1"
                 />
@@ -78,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Private Channel"
+                android:tag="private"
                 android:paddingLeft="10dp"
                 android:id="@+id/radio_button_2"
 

@@ -69,14 +69,14 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="0dp"
-                    android:id="@+id/describtion"
+                    android:id="@+id/description"
                     />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="provide a description about group"
                     android:layout_marginLeft="24dp"
-                    android:layout_below="@+id/describtion"
+                    android:layout_below="@+id/description"
 
                     />
             </RelativeLayout>

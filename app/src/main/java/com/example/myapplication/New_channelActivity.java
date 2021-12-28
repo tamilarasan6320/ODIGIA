@@ -90,7 +90,7 @@ public class New_channelActivity extends AppCompatActivity {
         });
 
         channelname = findViewById(R.id.channel_name);
-        description = findViewById(R.id.channel_describtion);
+        description = findViewById(R.id.channel_description);
 
         pick=(CircleImageView)findViewById(R.id.image_set_channel);
         pick.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +108,7 @@ public class New_channelActivity extends AppCompatActivity {
 
     private void CreateChannel() {
 
+
         Map<String, String> params = new HashMap<>();
         Map<String, String> fileParams = new HashMap<>();
         params.put(Constant.USER_ID,session.getData(Constant.ID));
@@ -117,11 +118,13 @@ public class New_channelActivity extends AppCompatActivity {
         fileParams.put(Constant.CHANNELIMAGE, filePath);
         ApiConfig.RequestToVolley((result, response) -> {
             if (result) {
+
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
 
                         Intent intent = new Intent(New_channelActivity.this,Channel_SettingActivity.class);
+                        intent.putExtra(Constant.CHANNEL_ID,jsonObject.getString(Constant.CHANNEL_ID));
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
@@ -134,6 +137,7 @@ public class New_channelActivity extends AppCompatActivity {
                     }
                 } catch (JSONException e){
                     e.printStackTrace();
+                    Toast.makeText(this, "Hi Jp"+session.getData(Constant.ID)+e.getMessage().toString(), Toast.LENGTH_SHORT).show();
                 }
 
 
