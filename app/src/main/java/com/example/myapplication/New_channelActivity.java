@@ -68,23 +68,14 @@ public class New_channelActivity extends AppCompatActivity {
 
                 if (isValid()){
                     if(profileupdated){
-//                        Intent intent = new Intent(New_channelActivity.this,Channel_SettingActivity.class);
-//                        startActivity(intent);
-//                        finish();
                         CreateChannel();
 
                     }
                     else {
-
                         Toast.makeText(New_channelActivity.this, "please upload Channel Image", Toast.LENGTH_SHORT).show();
-
                     }
                 }
 
-
-
-//                Intent intent = new Intent(New_channelActivity.this,Channel_SettingActivity.class);
-//                startActivity(intent);
 
             }
         });
@@ -137,7 +128,6 @@ public class New_channelActivity extends AppCompatActivity {
                     }
                 } catch (JSONException e){
                     e.printStackTrace();
-                    Toast.makeText(this, "Hi Jp"+session.getData(Constant.ID)+e.getMessage().toString(), Toast.LENGTH_SHORT).show();
                 }
 
 

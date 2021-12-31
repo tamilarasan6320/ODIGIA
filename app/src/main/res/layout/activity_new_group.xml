@@ -34,15 +34,17 @@
             android:orientation="horizontal"
             android:layout_marginTop="20dp"
             >
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/photo_camera"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/image_set_group"
+                android:src="@drawable/photo_camera"
+
                 />
             <EditText
+                android:id="@+id/group_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Group Name"

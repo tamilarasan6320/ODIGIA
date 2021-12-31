@@ -37,11 +37,7 @@
         <activity android:name=".New_channelActivity" />
         <activity android:name=".Floating_ActionActivity" />
         <activity android:name=".HomeActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".Profile_entryActivity" />
@@ -51,6 +47,11 @@
         <activity android:name=".Enter_OtpActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashscreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity" />

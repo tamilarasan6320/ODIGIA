@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -8,7 +9,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -17,25 +19,41 @@ import androidx.core.content.ContextCompat;
 
 import com.canhub.cropper.CropImage;
 import com.canhub.cropper.CropImageView;
+import com.example.myapplication.helper.ApiConfig;
+import com.example.myapplication.helper.Constant;
+import com.example.myapplication.helper.Session;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 public class New_groupActivity extends AppCompatActivity {
 
     private View Backbtn;
-    public ImageView pick;
+    public CircleImageView pick;
     public static final int SELECT_FILE = 110;
     public final int reqWritePermission = 2;
     private View next;
     String filePath = null;
     Uri imageUri,profileUri;
+    EditText groupname,description;
+    boolean profileupdated = false;
+    Session session;
+    Activity activity;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_group);
+        activity = New_groupActivity.this;
+        session = new Session(activity);
 
 
         Backbtn = findViewById(R.id.topAppBar);
@@ -52,21 +70,23 @@ public class New_groupActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(New_groupActivity.this,Group_SettingsActivity.class);
-                startActivity(intent);
+                if (isValid()){
+                    if(profileupdated){
+                        CreateGroup();
+
+                    }
+                    else {
+                        Toast.makeText(activity, "please upload Group Image", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
 
             }
         });
 
-        pick=(ImageView)findViewById(R.id.image_set_group);
-        Picasso.get()
-                .load(R.drawable.ic_profile_placeholder)
-                .fit()
-                .centerInside()
-                .placeholder(R.drawable.ic_profile_placeholder)
-                .error(R.drawable.ic_profile_placeholder)
-                .transform(new RoundedCornersTransformation(20, 0))
-                .into(pick);
+        pick=(CircleImageView) findViewById(R.id.image_set_group);
+        groupname = findViewById(R.id.group_name);
+        description = findViewById(R.id.description);
         pick.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -75,8 +95,53 @@ public class New_groupActivity extends AppCompatActivity {
 
             }
         });
+        Toast.makeText(activity, session.getData(Constant.ID), Toast.LENGTH_SHORT).show();
 
 
+
+    }
+
+    private void CreateGroup()
+    {
+        Map<String, String> params = new HashMap<>();
+        Map<String, String> fileParams = new HashMap<>();
+        params.put(Constant.USER_ID,session.getData(Constant.ID));
+        params.put(Constant.GROUPNAME, groupname.getText().toString().trim());
+        params.put(Constant.GROUPDESCRIPTION, description.getText().toString().trim());
+        params.put(Constant.TYPE, Constant.PUBLIC);
+        fileParams.put(Constant.GROUPIMAGE, filePath);
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
+
+                        Intent intent = new Intent(activity,Group_SettingsActivity.class);
+                        intent.putExtra(Constant.GROUP_ID,jsonObject.getString(Constant.GROUP_ID));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                        Toast.makeText(this, ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+
+                    }
+                    else {
+                        Toast.makeText(this, ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e){
+                    e.printStackTrace();
+                    Toast.makeText(this, "Hi Jp"+session.getData(Constant.ID)+e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                }
+
+
+
+            }
+            else {
+                Toast.makeText(this, String.valueOf(response) +String.valueOf(result), Toast.LENGTH_SHORT).show();
+
+            }
+        }, activity, Constant.CREATEGROUP_URL, params,fileParams);
 
     }
 
@@ -134,6 +199,7 @@ public class New_groupActivity extends AppCompatActivity {
                             .error(R.drawable.ic_profile_placeholder)
                             .transform(new RoundedCornersTransformation(20, 0))
                             .into(pick);
+                    profileupdated = true;
 
 
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
@@ -143,5 +209,19 @@ public class New_groupActivity extends AppCompatActivity {
 
         }
     }
+    private boolean isValid() {
+        if(groupname.getText().toString().equals("")){
+            groupname.setError("Group is Empty");
+            groupname.requestFocus();
+            return false;
+        }
+        if (description.getText().toString().equals("")){
+            description.setError("Description must be needed ");
+            description.requestFocus();
+            return false;
+        }
 
+        return  true;
     }
+
+}
