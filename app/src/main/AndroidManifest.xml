@@ -23,23 +23,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UpdateProfileActivity"></activity>
+        <activity android:name=".activity.EarnActivity"></activity>
+        <activity android:name=".activity.ListActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.InvitefriendActivity" />
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".UpdateProfileActivity" />
         <activity android:name=".IntroActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".Add_SubscriberGroup" />
-        <activity android:name=".Add_SubscriberChannel" >
-
-        </activity>
+        <activity android:name=".Add_SubscriberChannel" />
         <activity android:name=".Group_SettingsActivity" />
         <activity android:name=".Channel_SettingActivity" />
         <activity android:name=".New_groupActivity" />
         <activity android:name=".New_channelActivity" />
         <activity android:name=".Floating_ActionActivity" />
-        <activity android:name=".HomeActivity" >
-
-
-        </activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".Profile_entryActivity" />
         <activity
             android:name="com.canhub.cropper.CropImageActivity"
@@ -52,7 +52,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".MainActivity" />
     </application>

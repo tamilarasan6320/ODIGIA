@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".InviteFragment"
+    tools:context=".activity.InvitefriendActivity"
     android:background="@color/PrimaryDark"
     >
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -36,34 +37,34 @@
             android:orientation="vertical"
             >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/refer"
-            android:layout_marginTop="20dp"
-            />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/refer"
+                android:layout_marginTop="20dp"
+                />
 
-          <com.google.android.material.card.MaterialCardView
-              android:layout_width="200dp"
-              android:layout_height="50dp"
-              android:layout_margin="20dp"
-              app:cardCornerRadius="10dp"
-              android:backgroundTint="#c8e6c9"
-              android:layout_gravity="center"
-              >
-              <TextView
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="odigia.club/gfkk"
-                  android:layout_gravity="center"
-                  android:gravity="center"
-                  android:textStyle="bold"
-                  android:textSize="18dp"
-                  android:textColor="@color/black"
-                  android:id="@+id/invite_id"
-                  />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="10dp"
+                android:backgroundTint="#c8e6c9"
+                android:layout_gravity="center"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="odigia.club/gfkk"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/invite_id"
+                    />
 
-          </com.google.android.material.card.MaterialCardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -114,6 +115,5 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 </FrameLayout>

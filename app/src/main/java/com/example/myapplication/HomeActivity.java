@@ -18,6 +18,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.myapplication.activity.EarnActivity;
+import com.example.myapplication.activity.InvitefriendActivity;
+import com.example.myapplication.activity.ProfileActivity;
+import com.example.myapplication.activity.SettingActivity;
 import com.example.myapplication.helper.Constant;
 import com.example.myapplication.helper.Session;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -112,38 +116,36 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId())
 
         {
-//                case R.id.myprofile:
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            new MyprofileFragment()
-//                    ).commit();
-//
-//
-//                    break;
-//
-//                case R.id.invitefrd:
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            new InviteFragment()
-//                    ).commit();
-//                    break;
-//
-//                case R.id.settings:
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            new settingFragment()
-//                    ).commit();
-//                    break;
-//
-//                case R.id.list:
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            new listFragment()
-//                    ).commit();
-//                    break;
-//
-//
-//                case R.id.earning:
-//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                            new EarningFragment()
-//                    ).commit();
-//                    break;
+                case R.id.myprofile:
+                    Intent intent = new Intent(activity, ProfileActivity.class);
+                    startActivity(intent);
+
+
+                    break;
+
+                case R.id.invitefrd:
+                    Intent intent1 = new Intent(activity, InvitefriendActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case R.id.settings:
+                    Intent intent2 = new Intent(activity, SettingActivity.class);
+                    startActivity(intent2);
+
+                    break;
+
+                case R.id.list:
+                    Intent intent3 = new Intent(activity, SettingActivity.class);
+                    startActivity(intent3);
+
+
+                    break;
+
+
+                case R.id.earning:
+                    Intent intent4 = new Intent(activity, EarnActivity.class);
+                    startActivity(intent4);
+                    break;
 
 
             }
