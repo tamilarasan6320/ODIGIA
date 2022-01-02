@@ -48,6 +48,7 @@ public class Add_SubscriberChannel extends AppCompatActivity {
     String Channel_id;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

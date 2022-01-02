@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,12 +31,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 public class UpdateProfileActivity extends AppCompatActivity {
-    public ImageView pick;
     private View next;
     Uri imageUri,profileUri;
+    public CircleImageView pick;
     EditText first_name , last_name,description,city,instagram,twitter,facebook,linkedin,youtube;
     String filePath = null;
     public final int reqWritePermission = 2;
@@ -78,7 +78,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         userid.setText(session.getData(Constant.USER_NAME));
 
 
-        pick=(ImageView)findViewById(R.id.update_image);
+        pick=(CircleImageView)findViewById(R.id.update_image);
         first_name.setText(session.getData(Constant.FIRSTNAME));
         last_name.setText(session.getData(Constant.LASTNAME));
         description.setText(session.getData(Constant.DESCRIPTION));
@@ -96,7 +96,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 .centerInside()
                 .placeholder(R.drawable.ic_profile_placeholder)
                 .error(R.drawable.ic_profile_placeholder)
-                .transform(new RoundedCornersTransformation(20, 0))
                 .into(pick);
         pick.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)

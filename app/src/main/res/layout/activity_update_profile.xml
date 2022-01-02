@@ -40,15 +40,13 @@
         android:orientation="vertical"
         >
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:id="@+id/update_image"
-            android:scaleType="center"
             android:layout_gravity="center"
-            android:background="@drawable/round_add_profile"
             android:layout_marginTop="25dp"
-            app:srcCompat="@drawable/ic_baseline_add_photo_alternate_24"
+            android:src="@drawable/photo_camera"
             />
         <EditText
             android:layout_width="match_parent"

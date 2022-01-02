@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -31,12 +30,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Profile_entryActivity extends AppCompatActivity {
 
     private View next;
-    public ImageView pick;
+    public CircleImageView pick;
     EditText first_name , last_name,user_id;
     public final int reqWritePermission = 2;
     public static final int SELECT_FILE = 110;
@@ -44,6 +43,7 @@ public class Profile_entryActivity extends AppCompatActivity {
     String mobilenumber;
     String filePath = null;
     Activity activity;
+
 
 
     @Override
@@ -69,15 +69,7 @@ public class Profile_entryActivity extends AppCompatActivity {
         });
 
 
-        pick=(ImageView)findViewById(R.id.image);
-        Picasso.get()
-                .load(R.drawable.ic_profile_placeholder)
-                .fit()
-                .centerInside()
-                .placeholder(R.drawable.ic_profile_placeholder)
-                .error(R.drawable.ic_profile_placeholder)
-                .transform(new RoundedCornersTransformation(20, 0))
-                .into(pick);
+        pick=(CircleImageView)findViewById(R.id.image);
         pick.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
@@ -208,7 +200,6 @@ public class Profile_entryActivity extends AppCompatActivity {
                             .centerInside()
                             .placeholder(R.drawable.ic_profile_placeholder)
                             .error(R.drawable.ic_profile_placeholder)
-                            .transform(new RoundedCornersTransformation(20, 0))
                             .into(pick);
 
 

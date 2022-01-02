@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra(Constant.MOBILE, phoneNo);
                         startActivity(intent);
                         finish();
-                        Toast.makeText(this, ""+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, ""+phoneNo+String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e){
                     e.printStackTrace();

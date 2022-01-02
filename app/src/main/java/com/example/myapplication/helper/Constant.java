@@ -2,9 +2,9 @@ package com.example.myapplication.helper;
 
 public class Constant {
 
-    public static final String MainBaseUrl = "http://192.168.43.168/odigia/"; //Admin panel url
     //public static final String MainBaseUrl = "http://192.168.43.168/odigia/"; //Admin panel url
-    //public static final String MainBaseUrl = "http://odigia.booksbear.in/"; //Admin panel url
+    //public static final String MainBaseUrl = "http://192.168.43.168/odigia/"; //Admin panel url
+    public static final String MainBaseUrl = "http://odigia.booksbear.in/"; //Admin panel url
 
     public static final String BaseUrl = MainBaseUrl + "api-firebase/";
     public static final String REGISTER_URL = BaseUrl + "register_user.php";
@@ -18,6 +18,7 @@ public class Constant {
     public static final String UPDATE_GROUP_URL = BaseUrl + "update_group.php";
     public static final String PROFILE_EXIST_URL = BaseUrl + "profile_exists.php";
     public static final String ADD_SUBSCRIBER_CHANNEL_URL = BaseUrl + "add_subscriber_channel.php";
+    public static final String ADD_SUBSCRIBER_GROUP_URL = BaseUrl + "add_subscriber_group.php";
 
     public static final String SUCCESS = "success";
     public static final String Phonenumber = "phonenumber";

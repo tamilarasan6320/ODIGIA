@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -46,6 +47,7 @@ public class New_groupActivity extends AppCompatActivity {
     boolean profileupdated = false;
     Session session;
     Activity activity;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -54,6 +56,9 @@ public class New_groupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_group);
         activity = New_groupActivity.this;
         session = new Session(activity);
+        progressDialog = new ProgressDialog(activity);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
 
 
         Backbtn = findViewById(R.id.topAppBar);
@@ -72,6 +77,7 @@ public class New_groupActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (isValid()){
                     if(profileupdated){
+                        progressDialog.show();
                         CreateGroup();
 
                     }
@@ -115,6 +121,7 @@ public class New_groupActivity extends AppCompatActivity {
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
+                    progressDialog.dismiss();
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
 
                         Intent intent = new Intent(activity,Group_SettingsActivity.class);

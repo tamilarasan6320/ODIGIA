@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +19,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.myapplication.activity.EarnActivity;
 import com.example.myapplication.activity.InvitefriendActivity;
+import com.example.myapplication.activity.ListActivity;
 import com.example.myapplication.activity.ProfileActivity;
 import com.example.myapplication.activity.SettingActivity;
 import com.example.myapplication.helper.Constant;
@@ -29,7 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 
-import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         View header = navigationView.getHeaderView(0);
 
         TextView Nametxt = header.findViewById(R.id.nametxt);
-        ImageView Profile = header.findViewById(R.id.profile_icon);
+        CircleImageView Profile = header.findViewById(R.id.profile_icon);
         Nametxt.setText(session.getData(Constant.FIRSTNAME));
         Picasso.get()
                 .load(session.getData(Constant.PROFILE))
@@ -74,7 +74,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 .centerInside()
                 .placeholder(R.drawable.ic_profile_placeholder)
                 .error(R.drawable.ic_profile_placeholder)
-                .transform(new RoundedCornersTransformation(20, 0))
                 .into(Profile);
 
 
@@ -135,7 +134,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     break;
 
                 case R.id.list:
-                    Intent intent3 = new Intent(activity, SettingActivity.class);
+                    Intent intent3 = new Intent(activity, ListActivity.class);
                     startActivity(intent3);
 
 
@@ -192,10 +191,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return fab;
     }
 
-    public void hideFloatingActionButton() {
 
-        fab.hide();
 
-    }
 
 }

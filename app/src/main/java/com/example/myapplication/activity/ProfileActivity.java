@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,7 @@ import com.example.myapplication.helper.Constant;
 import com.example.myapplication.helper.Session;
 import com.squareup.picasso.Picasso;
 
-import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -52,7 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         TextView name = findViewById(R.id.name);
         TextView usedid = findViewById(R.id.username);
-        ImageView profile = findViewById(R.id.profile);
+        CircleImageView profile = findViewById(R.id.profile);
         name.setText(session.getData(Constant.FIRSTNAME));
         usedid.setText(session.getData(Constant.USER_NAME));
         Picasso.get()
@@ -61,16 +60,7 @@ public class ProfileActivity extends AppCompatActivity {
                 .centerInside()
                 .placeholder(R.drawable.ic_profile_placeholder)
                 .error(R.drawable.ic_profile_placeholder)
-                .transform(new RoundedCornersTransformation(20, 0))
                 .into(profile);
-
-
-
-
-
-
-
-
     }
 
 

@@ -23,7 +23,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.EarnActivity"></activity>
+        <activity android:name=".activity.GiftActivity"></activity>
+        <activity android:name=".activity.LockedMessageActivity" />
+        <activity android:name=".activity.Joined_groupsActivity" />
+        <activity android:name=".activity.Created_GroupActivity" />
+        <activity android:name=".activity.GroupActivity" />
+        <activity android:name=".activity.Joined_channelsActivity" />
+        <activity android:name=".activity.Created_channelsActivity" />
+        <activity android:name=".activity.ChannelActivity" />
+        <activity android:name=".activity.EarnActivity" />
         <activity android:name=".activity.ListActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.InvitefriendActivity" />

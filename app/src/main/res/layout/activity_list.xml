@@ -42,6 +42,7 @@
             android:layout_height="60dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
+            android:id="@+id/channels_tv"
 
             >
             <LinearLayout
@@ -82,6 +83,7 @@
             android:layout_height="60dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
+            android:id="@+id/group_tv"
 
             >
             <LinearLayout
@@ -122,6 +124,7 @@
             android:layout_height="60dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
+            android:id="@+id/lockedmsg"
 
             >
             <LinearLayout
@@ -160,6 +163,7 @@
             android:layout_height="60dp"
             android:orientation="vertical"
             android:layout_margin="10dp"
+            android:id="@+id/gift_tv"
 
             >
             <LinearLayout
@@ -194,42 +198,42 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="vertical"
-            android:layout_margin="10dp"
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_margin="10dp"-->
 
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+<!--            >-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
 
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/messenger" />
+<!--                <ImageView-->
+<!--                    android:layout_width="12dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    app:srcCompat="@drawable/messenger" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Direct Messages"
-                    android:layout_marginLeft="15dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Direct Messages"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="16sp"-->
+<!--                    />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="List of purchased or subscribed direct messages"
-                android:layout_marginTop="5dp"
-                android:textSize="14sp"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="List of purchased or subscribed direct messages"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:textSize="14sp"/>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
     </LinearLayout>

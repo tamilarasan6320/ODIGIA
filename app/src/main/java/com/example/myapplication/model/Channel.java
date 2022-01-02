@@ -2,10 +2,10 @@ package com.example.myapplication.model;
 
 import java.io.Serializable;
 
-public class Chat implements Serializable {
+public class Channel implements Serializable {
     String id, user_id,channel_name,channel_description,channel_image;
 
-    public Chat(String id, String user_id, String channel_name, String channel_description, String channel_image) {
+    public Channel(String id, String user_id, String channel_name, String channel_description, String channel_image) {
         this.id = id;
         this.user_id = user_id;
         this.channel_name = channel_name;
